@@ -1,0 +1,6 @@
+{
+  "testTableData": "SELECT p.name AS PROJECT_NAME, t.name AS TEST_NAME, MIN(TIMESTAMPDIFF(SECOND, t.start_time, t.end_time)) AS MIN_WORKING_TIME FROM test AS t INNER JOIN project AS p ON t.project_id = p.id GROUP BY p.name, t.name ORDER BY p.name, t.name",
+  "UniqueTestsCount": "SELECT p.name AS PROJECT, COUNT(DISTINCT(p.name)) AS TESTS_COUNT FROM test AS t JOIN project AS p ON t.project_id = p.id GROUP BY p.name",
+  "testTableSortByDate": "SELECT p.name AS PROJECT_NAME, t.name AS TEST_NAME, t.start_time AS DATE_TEST FROM test AS t INNER JOIN project AS p ON t.project_id = p.id WHERE t.start_time > '%s' ORDER BY p.name, t.name",
+  "testCountByBrowser": "(select browser AS BROWSER, count(name) AS TEST_COUNT from test WHERE browser = 'chrome') UNION(select browser AS BROWSER, count(name) AS TEST_COUNT from test WHERE browser = 'firefox')"
+}

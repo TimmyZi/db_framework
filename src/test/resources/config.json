@@ -1,0 +1,9 @@
+{
+  "dbSystem": "mysql",
+  "dbHost": "localhost",
+  "dbPort": "you_port",
+  "dbUser": "you_login",
+  "dbPassword": "you_password",
+  "dbName": "union_reporting",
+  "dbDriver": "com.mysql.jdbc.Driver"
+}
